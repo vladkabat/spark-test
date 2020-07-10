@@ -5,6 +5,12 @@ pipeline {
         jdk 'jdk8'
     }
     stages {
+        stage ('CD') {
+            steps {
+                sh 'cd task-2'
+            }
+        }
+        
         stage ('Build') {
             steps {
                 sh '''
