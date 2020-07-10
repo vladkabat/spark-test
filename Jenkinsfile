@@ -21,11 +21,6 @@ pipeline {
                     mvn test
                 '''
             }
-            post {
-                success {
-                    junit 'target/surefire-reports/**/*.xml' 
-                }
-            }
         }
     }
 }
