@@ -5,12 +5,6 @@ pipeline {
         jdk 'jdk8'
     }
     stages {
-        stage ('CD') {
-            steps {
-                sh 'cd task-2'
-            }
-        }
-        
         stage ('Build') {
             steps {
                 sh '''
@@ -22,7 +16,10 @@ pipeline {
 
         stage ('Test') {
             steps {
-                sh 'mvn test' 
+                sh '''
+                    cd task-2
+                    mvn test
+                '''
             }
             post {
                 success {
